@@ -3,7 +3,7 @@
 `yarn`
 [ Install dependences... ]
 
-`yarn start`
+`yarn dev`
 [ Start the server on port 3000 ]
 
 `localhost:3000`
