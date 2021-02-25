@@ -1,51 +1,19 @@
+import { useContext } from 'react';
+import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
-import { useState, useEffect, useContext } from 'react';
-import { ChallengesContext } from "../contexts/ChallengesContext";
-
-// Variavel global NodeJS
-let countdownTimeout: NodeJS.Timeout;
 
 export function Countdown() {
-
-  const { startNewChallenge } = useContext(ChallengesContext);
-
-  // Estados
-  const [ time, setTime ] = useState(0.05 * 60);
-  const [ isActive, setIsActive] = useState(false);
-  const [ hasFinished, setHasFinished ] = useState(false);
-
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
+  const { 
+    minutes,
+    seconds,
+    hasFinished,
+    isActive,
+    startCountdown,
+    resetCountdown
+  } = useContext(CountdownContext);
 
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
-
-  // Inicia o countdown
-  function startCountdown() {
-    setIsActive(true);
-  }
-
-  // Reseta o countdown
-  function resetCountdown() {
-    // evitando que o setTimeout execute
-    clearTimeout(countdownTimeout);
-    setIsActive(false);
-    //vou retornar o valor inicial
-    setTime(0.05 * 60);
-  }
-
-  // Gerador de efeitos colaterais
-  useEffect(() => {
-    if (isActive && time > 0) {
-      countdownTimeout = setTimeout(() => {
-        setTime(time - 1)
-      }, 1000)
-    } else if (isActive && time === 0) {
-      setHasFinished(true);
-      setIsActive(false);
-      startNewChallenge();
-    }
-  }, [isActive, time])
 
   return (
     <div>
