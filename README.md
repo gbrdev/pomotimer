@@ -7,8 +7,10 @@ Design by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/?hl=pt-
 # Run App
 
 [ Install dependences... ]
+
 `yarn`
 
 [ Start the server on port 3000 ]
+
 `yarn dev`
 `localhost:3000`
