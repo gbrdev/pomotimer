@@ -16,7 +16,6 @@ export default function Home() {
       <Head>
         <title>Principal | PomoTimer</title>
       </Head>
-
       <ExperienceBar />
       <CountdownProvider>
         <section>
