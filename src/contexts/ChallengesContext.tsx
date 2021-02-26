@@ -1,5 +1,7 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 import challenges from '../../challenges.json';
+//install Definitely Typed (lib de terceiros para typagem)
+import Cookies from 'js-cookie'; 
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -24,14 +26,17 @@ interface ChallengesContextData {
 interface ChallengesProviderProps {
   // como o meu children é um componente, eu preciso usar o ReactNode
   children: ReactNode;
+  level: number,
+  currentExperience: number,
+  challengesCompleted: number,
 };
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children } : ChallengesProviderProps) {
-  const [level, setLevel] = useState(1);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challengesCompleted, setChallengesCompleted] = useState(0);
+export function ChallengesProvider({ children, ...rest } : ChallengesProviderProps) {
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
 
   const [activeChallenge, setActiveChallenge] = useState(null);
   // calculo de potencia usando Math.pow
@@ -40,6 +45,13 @@ export function ChallengesProvider({ children } : ChallengesProviderProps) {
   useEffect(() => {
     Notification.requestPermission();
   }, [])
+
+  //salvar os coockies com a lib js-cookie
+  useEffect(() => {
+    Cookies.set('level', level.toString());
+    Cookies.set('currentExperience', currentExperience.toString());
+    Cookies.set('challengesCompleted', challengesCompleted.toString());
+  }, [level, currentExperience, challengesCompleted]) //essas informações que eu quero amz nos cookies
 
   function levelUp() {
     setLevel(level + 1);
