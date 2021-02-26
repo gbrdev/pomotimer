@@ -5,6 +5,7 @@
 
 .experienceBar span {
   font-size: 1rem;
+  transition: all 2s ease;
 }
 
 .experienceBar > div {
@@ -18,8 +19,8 @@
 
 .experienceBar > div > div {
   height: 4px;
-  border-radius: 4px;
-  background: var(--green);
+  background: linear-gradient(to left, var(--gray-line) 0%, var(--green) 5%);
+  transition: all 2s ease;
 }
 
 span.currentExperience {
