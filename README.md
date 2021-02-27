@@ -16,24 +16,18 @@ Design by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/?hl=pt-
 `localhost:3000`
 
 <hr>
-# Features
+## ✔️ What is working?
 
 - [x] Responsive Layout
-
 - [x] Challenges
-
 - [x] ContextAPI
-
 - [x] Cookies
-
 - [x] Create Modal
 
+## ⚡ future resources:
+
 - [ ] PWA
-
 - [ ] Login oauth (GitHub)
-
 - [ ] Dark Theme
-
 - [ ] SideBar
-
 - [ ] Leaderboard
