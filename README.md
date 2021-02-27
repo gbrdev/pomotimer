@@ -15,8 +15,6 @@ Design by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/?hl=pt-
 `yarn dev`
 `localhost:3000`
 
-<hr>
-
 ## ✔️ What is working?
 
 - [x] Responsive Layout
