@@ -14,3 +14,18 @@ Design by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/?hl=pt-
 
 `yarn dev`
 `localhost:3000`
+
+<hr>
+# Features
+
+[x] Responsive Layout
+[x] Challenges
+[x] ContextAPI
+[x] Cookies
+[x] Create Modal
+
+[] PWA
+[] Login oauth (GitHub)
+[] Dark Theme
+[] SideBar
+[] Leaderboard
