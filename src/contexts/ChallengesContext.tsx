@@ -45,9 +45,9 @@ export function ChallengesProvider({ children, ...rest } : ChallengesProviderPro
   // calculo de potencia usando Math.pow
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
   // array vazio, vai executar uma unica vez
-  useEffect(() => {
-    Notification.requestPermission();
-  }, [])
+  // useEffect(() => {
+  //   Notification.requestPermission();
+  // }, [])
 
   //salvar os coockies com a lib js-cookie
   useEffect(() => {
@@ -72,11 +72,11 @@ export function ChallengesProvider({ children, ...rest } : ChallengesProviderPro
     
     // Notificação
     new Audio('/notification.mp3').play();
-    if (Notification.permission === 'granted') {
-      new Notification('Novo desafio 🎉', {
-        body: `Valendo ${challenge.amount} xp!!!`
-      })
-    }
+    // if (Notification.permission === 'granted') {
+    //   new Notification('Novo desafio 🎉', {
+    //     body: `Valendo ${challenge.amount} xp!!!`
+    //   })
+    // }
   }
 
   function resetChallenge() {
