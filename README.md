@@ -16,6 +16,7 @@ Design by [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/?hl=pt-
 `localhost:3000`
 
 <hr>
+
 ## ✔️ What is working?
 
 - [x] Responsive Layout
